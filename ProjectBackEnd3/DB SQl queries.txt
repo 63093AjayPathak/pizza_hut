@@ -1,0 +1,91 @@
+--INSERTING DATA FOR MENU TABLE
+
+insert into menu (availability, description, item_name,price, size) values (1,'Tasty cheesy pizza with loads for toppings', 'Full Stack Pizza',350,'MEDIUM'); 
+insert into menu (availability, description, item_name,price, size) values (1,'Tasty cheesy pizza with Corn on top', 'Corn-Chesse Pizza',250,'MEDIUM'); 
+insert into menu (availability, description, item_name,price, size) values (1,'Tasty Pizza with variety of veggies as toppings', 'Farm House Pizza',300,'MEDIUM'); 
+insert into menu (availability, description, item_name,price, size) values (1,'Tasty cheesy pizza with Onion on top', 'Onion-Cheese Pizza',250,'MEDIUM'); 
+insert into menu (availability, description, item_name,price, size) values (1,'Classic margarita wiht a twist from our side', 'Special Margarita',300,'MEDIUM'); 
+
+--INSERTING DATA FOR EMPLOYEE TABLE
+
+insert into employee(designation, email, emp_name, password) values ('ADMIN' , 'ajay@gmail.com', 'Ajay Pathak', 'ajay123');
+insert into employee(designation, email, emp_name, password) values ('DELIVERYPERSON' , 'sandy@gmail.com', 'Sandeep Singh', 'sandy123');
+
+--DATE AND TIME RELATED FUNCTIONS IN MYSQL
+
+   ADDDATE
+   ADDTIME
+   CONVERT_TZ
+   CURDATE
+   CURRENT_DATE
+   CURRENT_TIME
+   CURRENT_TIMESTAMP
+   CURTIME
+   DATE FUNCTION
+   DATEDIFF
+   DATE_ADD
+   DATE_FORMAT
+   DATE_SUB
+   DAY
+   DAYNAME
+   DAYOFMONTH
+   DAYOFWEEK
+   DAYOFYEAR
+   EXTRACT
+   FROM_DAYS
+   FROM_UNIXTIME
+   GET_FORMAT
+   HOUR
+   LAST_DAY
+   LOCALTIME
+   LOCALTIMESTAMP
+   MAKEDATE
+   MAKETIME
+   MICROSECOND
+   MINUTE
+   MONTH
+   MONTHNAME
+   NOW
+   PERIOD_ADD
+   PERIOD_DIFF
+   QUARTER
+   SECOND
+   SEC_TO_TIME
+   STR_TO_DATE
+   SUBDATE
+   SUBTIME
+   SYSDATE
+   TIME FUNCTION
+   TIMEDIFF
+   TIMESTAMP FUNCTION
+   TIMESTAMPADD
+   TIMESTAMPDIFF
+   TIME_FORMAT
+   TIME_TO_SEC
+   TO_DAYS
+   TO_SECONDS
+   UNIX_TIMESTAMP
+   UTC_DATE
+   UTC_TIME
+   UTC_TIMESTAMP
+   WEEK
+   WEEKDAY
+   WEEKOFYEAR
+   YEAR
+   YEARWEEK
+
+--INSERTING DATA INTO ORDERS TABLE AND ORDER_DETAILS TABLE
+-- Orders table
+
+insert into orders (delivery_time, order_placed_time, status, total_amount, address_id, customer_id) values ( now(), now(), 'PLACED', 1350, 1,4);
+insert into orders (delivery_time, order_placed_time, status, total_amount, address_id, customer_id) values ( now(), now(), 'PLACED', 1550, 1,4);
+
+-- Order_details table
+
+insert into order_details (quantity, item_id, order_id) values (2,1,1);
+insert into order_details (quantity, item_id, order_id) values (1,6,1);
+insert into order_details (quantity, item_id, order_id) values (1,1,1);
+insert into order_details (quantity, item_id, order_id) values (3,3,2);
+insert into order_details (quantity, item_id, order_id) values (1,4,2);
+insert into order_details (quantity, item_id, order_id) values (2,5,2);
+

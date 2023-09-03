@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "92bac36f-5561-46eb-8d37-4a7eaeb9b148",
+		"name": "sandy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21169320"
+	},
+	"item": [
+		{
+			"name": "Customer Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Customer 1\",\r\n    \"mobile\":\"1223344556\",\r\n    \"email\":\"customer1@gmail.com\",\r\n    \"password\":\"customer123\",\r\n    \"role\":\"CUSTOMER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"houseNumber\":\"A-23\",\r\n    \"streetName\":\"KamlaNagar\",\r\n    \"city\":\"Agra\",\r\n    \"state\":\"Uttar Pradesh\",\r\n    \"pincode\":\"282001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer/addAddress",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"addAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching menu",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{customer_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customer/menu",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show all employees",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "asha123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Asha",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{admin_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/showAll",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"showAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD new employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"empName\":\"Papa\",\r\n    \"designation\":\"ADMIN\",\r\n    \"email\":\"papa@gmail.com\",\r\n    \"password\":\"papa123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/addEmployee",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"addEmployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete existinig employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/deleteEmployee/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"deleteEmployee",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding  a new feedback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"feedback\":\"Good quality food with great on-time service\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer/feedback/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"feedback",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showing al feedbacks to admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/feedback",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editing customer profile",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Asha Devi\",\r\n    \"password\":\"asha123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer/editProfile/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"editProfile",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all addresses of a specific customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/customer/showAddress/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"showAddress",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching loged in customer details with id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/customer/showProfile/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"showProfile",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetching full menu before altering it(for shopkeeper)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{shopkeeper_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/shopkeeper/showMenu",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"shopkeeper",
+						"showMenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "altering menu",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/shopkeeper/alterMenu/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"shopkeeper",
+						"alterMenu",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting orders for a specific customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/customer/showOrders/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"showOrders",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order details of specific order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/customer/orderDetails/6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"orderDetails",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetching orders with status as  'PLACED'",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"PREPARING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/shopkeeper/getOrdersWithCertainStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"shopkeeper",
+						"getOrdersWithCertainStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changing status to 'PREPARING'",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"PREPARING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employee/changeStatus/6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee",
+						"changeStatus",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changing order status to 'OUT_FOR_DELIVERY'",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"OUT FOR DELIVERY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employee/changeStatus/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee",
+						"changeStatus",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetching orders with status as 'PREPARING'",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"PREPARING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/shopkeeper/getOrdersWithCertainStatus",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"shopkeeper",
+						"getOrdersWithCertainStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delivery person fetching all new orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/delivery/getNewOrders",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"delivery",
+						"getNewOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post new Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"addressId\":1,\r\n    \"amount\":550,\r\n    \"items\":[\r\n        {\r\n            \"quantity\":2,\r\n            \"itemId\":3\r\n        },\r\n        {\r\n            \"quantity\":1,\r\n            \"itemId\":6\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/customer/postOrder/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"postOrder",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accepting order for delivery",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/delivery/selectOrder/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"delivery",
+						"selectOrder",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Changing order status to 'DELIVERED'",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"DELIVERED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employee/changeStatus/6",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employee",
+						"changeStatus",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin fetching orders by date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderPlacedDate\":\"2022-09-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/getDateWiseOrders",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"getDateWiseOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Universal Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"aporv@gmail.com\",\r\n    \"password\":\"apoorv123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:7070/PizzaHut",
+			"type": "string"
+		},
+		{
+			"key": "customer_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "admin_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "shopkeeper_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
